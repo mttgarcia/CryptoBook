@@ -40,4 +40,3 @@ def decrypt(filename,key):
     with open(filename+'.enc','wb') as f:
         f.write(cipher.decrypt_and_verify(ciphertext, tag))
 
-encrypt_all()

